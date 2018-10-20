@@ -1,23 +1,24 @@
-# Lloyd-Max-Quantizer
-Numpy version of Lloyd-Max quantizer. <br />
-Currently, support only for Lloyd-Max quantizer for the normal distribution. <br />
+# Lloyd-Max Quantizer:<br />
+Lloyd-Max quantizer implemented with Python3 (Numpy). <br />
+Currently, this repository supports only for the quantization of the signal <br /> 
+with the distribution as normal distribution. <br />
 
-## The libraries:<br /> 
-1. numpy <br />
-2. matplot <br />
-3. python3 <br />
+## The required libraries:<br /> 
+1. Numpy <br />
+2. Matplotlib <br />
 
 ## Usage: <br /> 
-In case of quantization with 3-bit with 1,000 iterations. <br />
+In case of wanting to quantization with 3-bit and doing the computation with 1,000 iterations, <br />
+The example of command can be shown as below. <br />
 ~~~shell
 python3 main.py -b 3 -i 1000
 ~~~
-
+##The result: <br />
 <p align="center">
   <img width="50%" height="50%" src="https://github.com/FuengfusinNinnart/lloyd-max-quantizer/blob/master/results.png">
 </p>
 
 ## Result of quantization with 3-bit (8 possibles) <br /> 
-The top one shows the noise with the normal distribution (zero mean, unit variance). <br />
-The middle one shows discrete quantization points of the input. <br />
-The last one is the output or the quantized signal. <br />
+In the graph, the top sub-graph shows the input signal that is a noise with the normal distribution (zero mean, unit variance). <br />
+The middle one shows the discrete quatnization points of the input signal. <br />
+The last one is the output or the quantized normal distribution noise. <br />
