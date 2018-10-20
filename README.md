@@ -15,7 +15,7 @@ python3 main.py -b 3 -i 1000
 ~~~
 ##The result: <br />
 <p align="center">
-  <img width="50%" height="50%" src="https://github.com/FuengfusinNinnart/lloyd-max-quantizer/blob/master/results.png">
+  <img width="50%" height="50%" src="https://github.com/FuengfusinNinnart/lloyd-max-quantizer/blob/master/outputs/results.png">
 </p>
 
 ## Result of quantization with 3-bit (8 possibles) <br /> 
