@@ -1,9 +1,9 @@
 # Lloyd-Max Quantizer:<br />
-Lloyd-Max quantizer implemented with Python3 (Numpy). <br />
+This is a Lloyd-Max quantizer implemented with Python3 (Numpy). <br />
 Currently, this repository supports only for the quantization of the signal <br /> 
 with the distribution as normal distribution. <br />
 
-## The required libraries:<br /> 
+## The required Python libraries:<br /> 
 1. Numpy <br />
 2. Matplotlib <br />
 
@@ -21,3 +21,4 @@ python3 main.py -b 3 -i 1000
 In the graph, the top sub-graph shows the input signal that is a noise with the normal distribution (zero mean, unit variance). <br />
 The middle one shows the discrete quatnization points of the input signal. <br />
 The last one is the output or the quantized normal distribution noise. <br />
+The Mean Square Error of 3 bit quantization of noise with normal distribution: 0.03359269271137846.
