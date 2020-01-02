@@ -1,36 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Collection of utility functions for using with lloyd_max_quantizer
-Created on Mon Oct  8 00:31:15 2018
+"""Collection of utility functions for Lloyd Max Quantizer.
 @author: Fuengfusin Ninnart
 """
 import numpy as np
 import scipy.integrate as integrate
 
+
 def normal_dist(x, mean=0.0, vari=1.0):
-    """
-    A normal distribution function created to use with scipy.integral.quad
+    """A normal distribution function created to use with scipy.integral.quad
     """
     return (1.0/(np.sqrt(2.0*np.pi*vari)))*np.exp((-np.power((x-mean),2.0))/(2.0*vari))
 
+
 def expected_normal_dist(x, mean=0.0, vari=1.0):
-    """
-    A expected value of normal distribution function which created to use with scipy.integral.quad
+    """A expected value of normal distribution function which created to use with scipy.integral.quad
     """
     return (x/(np.sqrt(2.0*np.pi*vari)))*np.exp((-np.power((x-mean),2.0))/(2.0*vari))
 
+
 def laplace_dist(x, mean=0.0, vari=1.0):
-    """
-    A laplace distribution function to use with scipy.integral.quad
+    """ A laplace distribution function to use with scipy.integral.quad
     """
     #In laplace distribution beta is used instead of variance so, the converting is necessary.
     scale = np.sqrt(vari/2.0)
     return (1.0/(2.0*scale))*np.exp(-(np.abs(x-mean))/(scale))
 
 def expected_laplace_dist(x, mean=0.0, vari=1.0):
-    """
-    A expected value of laplace distribution function which created to use with scipy.integral.quad
+    """A expected value of laplace distribution function which created to use with scipy.integral.quad
     """
     scale = np.sqrt(vari/2.0)
     return x*(1.0/(2.0*scale))*np.exp(-(np.abs(x-mean))/(scale))
@@ -42,8 +39,7 @@ def expected_laplace_dist(x, mean=0.0, vari=1.0):
 #    return (1.0/(std*np.sqrt(2.0*np.pi)))*np.power(x-mean,2)*np.exp((-np.power((x-mean),2.0)/(2.0*np.power(std,2.0))))
 
 def MSE_loss(x, x_hat_q):
-    """
-    Find the mean square loss between x (orginal signal) and x_hat (quantized signal)
+    """Find the mean square loss between x (orginal signal) and x_hat (quantized signal)
     Args:
         x: the signal without quantization
         x_hat_q: the signal of x after quantization
@@ -57,13 +53,13 @@ def MSE_loss(x, x_hat_q):
     MSE = np.sum(np.power(x-x_hat_q,2))/np.size(x)
     return MSE
 
-class lloyd_max_quantizer:
-    """
-    A class for iterative Lloyd Max quantizer.
+
+class LloydMaxQuantizer(object):
+    """A class for iterative Lloyd Max quantizer.
     This quantizer is created to minimize amount SNR between the orginal signal
     and quantized signal.
     """
-    
+    @staticmethod
     def start_repre(x, bit):
         """
         Generate representations of each threshold using 
@@ -73,7 +69,7 @@ class lloyd_max_quantizer:
         Return:
             threshold:
         """
-        assert type(bit) == int
+        assert isinstance(bit, int)
         x = np.array(x)
         num_repre  = np.power(2,bit)
         step = (np.max(x)-np.min(x))/num_repre
@@ -84,23 +80,19 @@ class lloyd_max_quantizer:
              repre = np.append(repre, middle_point+(i+1)*step)
              repre = np.insert(repre, 0, middle_point-(i+1)*step)
         return repre
-        
+
+    @staticmethod
     def threshold(repre):
         """
-        Args: repre
-        
         """
         t_q = np.zeros(np.size(repre)-1)
         for i in range(len(repre)-1):
             t_q[i] = 0.5*(repre[i]+repre[i+1])
         return t_q
     
+    @staticmethod
     def represent(thre, expected_dist, dist):
         """
-        Requirments function:
-            threshold
-        Args:
-            
         """
         thre = np.array(thre)
         x_hat_q = np.zeros(np.size(thre)+1)
@@ -112,13 +104,9 @@ class lloyd_max_quantizer:
              x_hat_q[i] = integrate.quad(expected_dist, thre[i], thre[i+1])[0]/(integrate.quad(dist,thre[i],thre[i+1])[0])
         return x_hat_q
     
+    @staticmethod
     def quant(x, thre, repre):
-        """
-        Quantization operation that implemented using numpy.
-        x: input signal that wanted to be quantized.
-        thre: list of 
-        
-        
+        """Quantization operation. 
         """
         thre = np.append(thre, np.inf)
         thre = np.insert(thre, 0, -np.inf)
