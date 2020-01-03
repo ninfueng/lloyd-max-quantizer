@@ -11,15 +11,15 @@ Using command as below:
 ~~~shell
 python3 main.py -b 8 -i 1000000
 ~~~
-## Results: <br/>
+## Result of quantization with 8-bit: <br/>
 <p align="center">
   <img width="50%" height="50%" src="https://github.com/ninnart-fuengfusin/lloyd-max-quantizer/blob/master/outputs/results.png">
-  
-## Result of quantization with 8-bit <br/>
+
 The upper sub-graph showed the input signal that is a Gaussian distribution noise with zero mean and a unit variance.
 The middle sub-graph displayed the optimized quatization points of the input signal.
 The bottom sub-graph exhibited the output signal that is the quantized Gaussian distribution noise. <br>
 
-The Mean Square Error of 8 bit quantization of noise with Gaussian distribution: 0.03359269271137846.
+The Mean Square Error of 8 bit quantization of noise with Gaussian distribution is 3.595888887954022e-05.
+
 ## License: <br/>
 MIT license.
