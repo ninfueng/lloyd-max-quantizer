@@ -17,7 +17,7 @@ from utils import normal_dist, expected_normal_dist, MSE_loss, LloydMaxQuantizer
 
 parser = argparse.ArgumentParser(description='lloyd-max iteration quantizer')
 parser.add_argument('--bit', '-b', type=int, default=8, help='number of bit for quantization')
-parser.add_argument('--iteration', '-i', type=int, default=1000+1, help='number of iteration')
+parser.add_argument('--iteration', '-i', type=int, default=1_000_000, help='number of iteration')
 parser.add_argument('--range', '-r', type=int, default=10, help='range of the initial distribution')
 parser.add_argument('--resolution', '-re', type=int, default=100, help='resolution of the initial distribution')
 parser.add_argument('--save_location', '-s', type=str, default='outputs', help='save location of representations and ')
