@@ -2,8 +2,9 @@
 This is a Numpy implementation of Lloyd-Max Quantizer. Currently, this repository only supports for quantization of the Gaussian distribution signal.
 
 ## Requirements:
-1. numpy <br>
-2. matplotlib <br>
+1. numpy
+2. matplotlib
+3. scipy
 
 
 ## Usage:
