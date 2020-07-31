@@ -15,7 +15,7 @@ python3 main.py -b 8 -i 1000000
 
 ## Result of quantization with 8-bit:
 <p align="center">
-  <img width="50%" height="50%" src="https://github.com/ninnart-fuengfusin/lloyd-max-quantizer/blob/master/outputs/results.png">
+  <img width="50%" height="50%" src="https://github.com/stillame96/lloyd-max-quantizer/blob/master/outputs/results.png">
 
 From this figure, upper graph shows an input signal or a Gaussian noise with zero mean and a unit variance. The middle graph displays the optimized quantization location given the input signal. The bottom graph shows an result signal or an quantized Gaussian noise. <br>
 
