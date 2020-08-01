@@ -1,5 +1,5 @@
 # Lloyd-Max Quantizer:
-This is a Numpy implementation of Lloyd-Max Quantizer. Currently, this repository only supports for quantization of the Gaussian distribution signal.
+This is a Python implementation of Lloyd-Max Quantizer. Currently, this repository only supports for quantization of the Gaussian distribution signal.
 
 ## Requirements:
 1. numpy
