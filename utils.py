@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Collection of utility functions for Lloyd Max Quantizer.
-@author: Fuengfusin Ninnart
+@author: Ninnart Fuengfusin
 """
 import numpy as np
 import scipy.integrate as integrate
