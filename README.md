@@ -8,7 +8,7 @@ This is a Python implementation of Lloyd-Max Quantizer. Currently, this reposito
 
 
 ## Usage:
-To quantization with 8-bit with 1,000,000 iterations, use a command below:
+To quantization with 8-bit for 1,000,000 iterations, please use a command as follows:
 ~~~shell
 python3 main.py -b 8 -i 1000000
 ~~~
@@ -17,7 +17,7 @@ python3 main.py -b 8 -i 1000000
 <p align="center">
   <img width="50%" height="50%" src="https://github.com/stillame96/lloyd-max-quantizer/blob/master/outputs/results.png">
 
-From this figure, upper graph shows an input signal or a Gaussian noise with zero mean and a unit variance. The middle graph displays the optimized quantization location given the input signal. The bottom graph shows an result signal or an quantized Gaussian noise. <br>
+From the figure, the upper-figure shows an input signal or a Gaussian noise with zero mean and a unit variance. The middle-figure shows optimized quantization locations given the input signal. The bottom-figure shows a result signal or an quantized Gaussian noise. <br>
 
 From this implementation, mean square error of 8-bit quantization of Gaussian noise is 3.595888887954022e-05.
 
